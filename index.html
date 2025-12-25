@@ -1,0 +1,226 @@
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toko Alat Dapurku</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #4a4a4a;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+      color: #4a4a4a;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.8rem; font-weight: 600; }
+    nav ul { list-style: none; display: flex; }
+    nav ul li { margin-left: 20px; }
+    nav ul li a { color: #4a4a4a; text-decoration: none; transition: color 0.3s ease; }
+    nav ul li a:hover { color: #66bb6a; }
+
+    .hero {
+      background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+      text-align: center;
+      padding: 100px 0;
+      border-radius: 0 0 50px 50px;
+    }
+
+    .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 20px; }
+    .btn {
+      background: linear-gradient(135deg, #81c784 0%, #66bb6a 100%);
+      color: white; padding: 12px 25px; border-radius: 25px;
+      text-decoration: none; font-weight: 500;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(102,187,106,0.3); }
+
+    .products { padding: 50px 0; background-color: #fafafa; }
+    .products h2 { text-align: center; margin-bottom: 30px; font-size: 2rem; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 20px; }
+    .product {
+      background: white; padding: 20px; text-align: center;
+      border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .product:hover { transform: translateY(-5px); }
+    .product img { max-width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; }
+    .product h3 { margin: 15px 0; font-size: 1.2rem; }
+    .product p { font-size: 1.1rem; color: #66bb6a; font-weight: 600; }
+
+    .product a.whatsapp {
+      background-color: #66bb6a;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      margin: 5px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product a.whatsapp:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(102, 187, 106, 0.3);
+    }
+
+    .product a.shopee {
+      background-color: #ff7043;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      margin: 5px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product a.shopee:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 112, 67, 0.3);
+    }
+
+    .about {
+      padding: 50px 0;
+      background-color: #fce4ec;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #4a4a4a;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #555;
+    }
+	
+	.about {
+      padding: 50px 0;
+	  background-color: #fce4ec; /* Pink pastel lembut */
+	  text-align: center;
+	  border-radius: 15px;
+	  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+	}
+
+	.about h2 {
+	  font-size: 2rem;
+	  margin-bottom: 20px;
+	  color: #4a4a4a;
+	}
+
+	.about p {
+	  font-size: 1.1rem;
+	  max-width: 800px;
+	  margin: 0 auto;
+	  color: #555;
+	  line-height: 1.8;
+	}
+
+    footer {
+      background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+      text-align: center; padding: 20px 0; border-radius: 50px 50px 0 0;
+    }	
+
+    @media (max-width: 768px) {
+      header .container { flex-direction: column; text-align: center; }
+      nav ul { margin-top: 10px; }
+      nav ul li { margin: 0 10px; }
+      .hero h2 { font-size: 2rem; }
+      .product-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">👩‍🍳 Alat Dapurku</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>Selamat Datang di Toko Alat Dapurku</h2>
+      <p>Temukan perabotan dapur berkualitas tinggi untuk rumah Anda dengan desain modern dan harga terjangkau.</p>
+      <a href="#products" class="btn">Lihat Produk</a>
+    </div>
+  </section>
+
+  <section id="products" class="products">
+    <div class="container">
+      <h2>Produk Kami</h2>
+      <div class="product-grid">
+        <div class="product">
+          <img src="image/Pisau-dapur.jpg" alt="1 Set Pisau Dapur">
+          <h3>1 Set Pisau Dapur </h3>
+          <p>Rp 300.000</p>
+          <a href="https://wa.me/6285715308943?text=Halo,%20saya%20ingin%20pesan%201%20Set%20Pisau%20Dapur%20seharga%20Rp%20300.000" class="whatsapp" target="_blank">Pesan via WhatsApp</a>
+          <a href="https://shopee.co.id/product/123456789" class="shopee" target="_blank">Beli di Shopee</a>
+        </div>
+        <div class="product">
+          <img src="image/Cosmos-Oven.jpg" alt="Cosmos Oven">
+          <h3>Cosmos Oven</h3>
+          <p>Rp 400.000</p>
+          <a href="https://wa.me/6285715308943?text=Halo,%20saya%20ingin%20pesan%20Cosmos%20Oven%20seharga%20Rp%20400.000" class="whatsapp" target="_blank">Pesan via WhatsApp</a>
+          <a href=<a href="https://shopee.co.id/product/123456789" class="shopee" target="_blank">Beli di Shopee</a>
+        </div>
+		<div class="product">
+          <img src="image/rice-cooker.jpg" alt="Rice Cooker Philips">
+          <h3>Rice Cooker Philips</h3>
+          <p>Rp 700.000</p>
+          <a href="https://wa.me/6285715308943?text=Halo,%20saya%20ingin%20pesan%20Rice%20Cooker%20Philips%20seharga%20Rp%20700.000" class="whatsapp" target="_blank">Pesan via WhatsApp</a>
+          <a href=<a href="https://shopee.co.id/product/123456789" class="shopee" target="_blank">Beli di Shopee</a>
+        </div>
+		<div class="product">
+          <img src="image/panci.jpg" alt="1 Set Panci">
+          <h3>1 Set Panci</h3>
+          <p>Rp 600.000</p>
+          <a href="https://wa.me/6285715308943?text=Halo,%20saya%20ingin%20pesan%201%20Set%20Panci%20seharga%20Rp%20600.000" class="whatsapp" target="_blank">Pesan via WhatsApp</a>
+          <a href=<a href="https://shopee.co.id/product/123456789" class="shopee" target="_blank">Beli di Shopee</a>
+        </div>
+		<div class="product">
+          <img src="image/piring-keramik.jpg" alt="Piring Keramik">
+          <h3>Piring Keramik</h3>
+          <p>Rp 20.000</p>
+          <a href="https://wa.me/6285715308943?text=Halo,%20saya%20ingin%20pesan%20Piring%20keramik%20seharga%20Rp%2020.000" class="whatsapp" target="_blank">Pesan via WhatsApp</a>
+          <a href=<a href="https://shopee.co.id/product/123456789" class="shopee" target="_blank">Beli di Shopee</a>
+        </div>
+  </section>
+		
+	<section id="about" class="about">
+	  <div class="container">
+        <h2>Tentang Kami</h2>
+        <p><strong>AlatDapurku</strong> adalah toko online yang menyediakan berbagai macam perabotan dapur berkualitas tinggi dengan desain modern dan harga terjangkau. Kami percaya bahwa dapur adalah jantung rumah, tempat di mana rasa, cerita, dan kebersamaan tercipta. 
+        </p>
+        <p>Dengan koleksi produk mulai dari pisau, panci, oven, hingga aksesoris dapur lainnya, kami berkomitmen untuk menghadirkan peralatan yang praktis, aman, dan estetik agar setiap aktivitas memasak menjadi lebih menyenangkan. 
+        </p>
+        <p>Kepuasan pelanggan adalah prioritas kami. Karena itu, <strong>AlatDapurku</strong> selalu memastikan produk yang kami tawarkan memiliki kualitas terbaik dan layanan yang ramah. Mari wujudkan dapur impian Anda bersama kami!</p>
+     </div>
+   </section>
